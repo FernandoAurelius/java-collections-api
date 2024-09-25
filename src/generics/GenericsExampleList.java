@@ -20,7 +20,7 @@ public class GenericsExampleList {
             System.out.println(element);
         }
 
-        // Iterating over list without generics (mandatory to explicit cast type, may throw errors during execution
+        // Iterating over list without generics (mandatory to explicit cast type, may throw errors during execution)
         for (Object element : listWithoutGenerics) {
             String str = (String) element;
             System.out.println(str);
