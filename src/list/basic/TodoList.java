@@ -34,4 +34,19 @@ public class TodoList {
         return todos.stream().map(Todo::getDescription).collect(Collectors.toList());
     }
 
+    public static void main(String[] args) {
+        TodoList todoList = new TodoList();
+        todoList.getTotalTodos();
+
+        todoList.addTodo("Go to supermarket");
+        todoList.addTodo("Go for a walk");
+        todoList.addTodo("Buy cough medicine");
+        todoList.getTotalTodos();
+
+        todoList.removeTodo("Go for a walk");
+        todoList.getTotalTodos();
+
+        System.out.println("Todos in todo list: " + todoList.getTodosDescriptions()) ;
+    }
+
 }
