@@ -19,7 +19,7 @@ public class ShoppingCart {
     }
 
     public Double calculateTotalPrice() {
-        Double totalValue = 0.0;
+        double totalValue = 0.0;
         for (Item item : items) {
             totalValue += item.getPrice() * item.getQuantity();
         }
@@ -33,10 +33,13 @@ public class ShoppingCart {
 
     public static void main(String[] args) {
         var shoppingCart = new ShoppingCart();
+
         shoppingCart.addItem("Banana", 3.5, 2);
         shoppingCart.addItem("Apple", 2.0, 3);
+
         shoppingCart.removeItem("Apple");
         shoppingCart.addItem("Carrot", 2.0, 5);
+
         System.out.println("Total value: " + shoppingCart.calculateTotalPrice());
         shoppingCart.showItems();
     }
