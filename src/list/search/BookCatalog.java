@@ -17,8 +17,8 @@ public class BookCatalog {
 
     public List<Book> searchByYear(int beginningYear, int endingYear) {
         return books.stream()
-                .filter(b -> b.year().isAfter(LocalDate.of(beginningYear, 1, 1)))
-                .filter(b -> b.year().isBefore(LocalDate.of(endingYear, 1, 1)))
+                .filter(b -> b.year().isAfter(LocalDate.of(beginningYear - 1, 1, 1)))
+                .filter(b -> b.year().isBefore(LocalDate.of(endingYear + 1, 1, 1)))
                 .toList();
     }
 
