@@ -22,9 +22,9 @@ public class Principal {
         System.out.println("Books after 'natural' comparison: ");
         Collections.sort(books);
         for (Book book : books) {
-            System.out.println(book.getTitle() + " - " +
-                    book.getAuthor() + " - " +
-                    book.getYear()
+            System.out.println(book.title() + " - " +
+                    book.author() + " - " +
+                    book.year()
             );
         }
 
@@ -33,9 +33,9 @@ public class Principal {
         System.out.println("Books after year comparison: ");
         books.sort(new BookYearComparator());
         for (Book book : books) {
-            System.out.println(book.getTitle() + " - " +
-                    book.getAuthor() + " - " +
-                    book.getYear()
+            System.out.println(book.title() + " - " +
+                    book.author() + " - " +
+                    book.year()
             );
         }
 
@@ -44,9 +44,9 @@ public class Principal {
         System.out.println("Books after author comparison: ");
         books.sort(new BookAuthorComparator());
         for (Book book : books) {
-            System.out.println(book.getTitle() + " - " +
-                    book.getAuthor() + " - " +
-                    book.getYear()
+            System.out.println(book.title() + " - " +
+                    book.author() + " - " +
+                    book.year()
             );
         }
 
@@ -55,9 +55,9 @@ public class Principal {
         System.out.println("Books after title, year and author comparison: ");
         books.sort(new BookTitleYearAuthorComparator());
         for (Book book : books) {
-            System.out.println(book.getTitle() + " - " +
-                    book.getAuthor() + " - " +
-                    book.getYear()
+            System.out.println(book.title() + " - " +
+                    book.author() + " - " +
+                    book.year()
             );
         }
 

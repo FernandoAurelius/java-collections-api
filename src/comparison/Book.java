@@ -2,45 +2,11 @@ package comparison;
 
 import java.util.Comparator;
 
-public class Book implements Comparable<Book> {
-
-    private String title;
-    private String author;
-    private Integer year;
-
-    public Book(String title, String author, Integer year) {
-        this.title = title;
-        this.author = author;
-        this.year = year;
-    }
-
-    public String getTitle() {
-        return title;
-    }
-
-    public void setTitle(String title) {
-        this.title = title;
-    }
-
-    public String getAuthor() {
-        return author;
-    }
-
-    public void setAuthor(String author) {
-        this.author = author;
-    }
-
-    public Integer getYear() {
-        return year;
-    }
-
-    public void setYear(Integer year) {
-        this.year = year;
-    }
+public record Book(String title, String author, Integer year) implements Comparable<Book> {
 
     @Override
     public int compareTo(Book book) {
-        return title.compareTo(book.getTitle());
+        return title.compareTo(book.title());
     }
 
 }
@@ -48,7 +14,7 @@ public class Book implements Comparable<Book> {
 class BookAuthorComparator implements Comparator<Book> {
     @Override
     public int compare(Book book1, Book book2) {
-        return book1.getAuthor().compareTo(book2.getAuthor());
+        return book1.author().compareTo(book2.author());
     }
 }
 
@@ -63,21 +29,21 @@ class BookYearComparator implements Comparator<Book> {
             return 1;
         }
         return 0; */
-        return book1.getYear().compareTo(book2.getYear());
+        return book1.year().compareTo(book2.year());
     }
 }
 
 class BookTitleYearAuthorComparator implements Comparator<Book> {
     @Override
     public int compare(Book book1, Book book2) {
-        int year = Integer.compare(book1.getYear(), book2.getYear());
+        int year = Integer.compare(book1.year(), book2.year());
         if (year != 0) {
             return year;
         }
-        int author = book1.getAuthor().compareTo(book2.getAuthor());
+        int author = book1.author().compareTo(book2.author());
         if (author != 0) {
             return author;
         }
-        return book1.getTitle().compareTo(book2.getTitle());
+        return book1.title().compareTo(book2.title());
     }
 }

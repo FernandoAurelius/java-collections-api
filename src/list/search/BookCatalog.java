@@ -5,7 +5,11 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class BookCatalog {
-    private final List<Book> books = new ArrayList<>();
+    private final List<Book> books;
+
+    public BookCatalog() {
+        books = new ArrayList<>();
+    }
 
     public void addBook(String title, String author, LocalDate year) {
         books.add(new Book(title, author, year));

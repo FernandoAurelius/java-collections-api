@@ -6,9 +6,10 @@ import java.util.stream.Collectors;
 
 public class TodoList {
 
-    private List<Todo> todos = new ArrayList<>();
+    private final List<Todo> todos;
 
     public TodoList() {
+        todos = new ArrayList<>();
     }
 
     public void addTodo(String description) {

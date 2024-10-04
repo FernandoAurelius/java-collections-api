@@ -5,7 +5,11 @@ import java.util.Comparator;
 import java.util.List;
 
 public class NumbersSum {
-    private final List<Integer> numbers = new ArrayList<>();
+    private final List<Integer> numbers;
+
+    public NumbersSum() {
+        numbers = new ArrayList<>();
+    }
 
     public void addNumber(Integer number) {
         numbers.add(number);
@@ -15,10 +19,13 @@ public class NumbersSum {
         return numbers.stream().reduce(0, Integer::sum);
     }
 
+
+    @SuppressWarnings("OptionalGetWithoutIsPresent")
     public Integer findMax() {
         return numbers.stream().max(Comparator.naturalOrder()).get();
     }
 
+    @SuppressWarnings("OptionalGetWithoutIsPresent")
     public Integer findMin() {
         return numbers.stream().min(Comparator.naturalOrder()).get();
     }
