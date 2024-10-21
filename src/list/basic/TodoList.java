@@ -6,9 +6,10 @@ import java.util.stream.Collectors;
 
 public class TodoList {
 
-    private List<Todo> todos = new ArrayList<>();
+    private final List<Todo> todos;
 
     public TodoList() {
+        todos = new ArrayList<>();
     }
 
     public void addTodo(String description) {
@@ -16,12 +17,9 @@ public class TodoList {
     }
 
     public void removeTodo(String description) {
-        for (Todo todo : todos) {
-            if (todo.getDescription().equalsIgnoreCase(description)) {
-                todos.remove(todo);
-                System.out.println("Todo removed successfully!");
-                return;
-            }
+        try {
+            todos.removeIf(t -> t.getDescription().equalsIgnoreCase(description));
+        } catch (NullPointerException e) {
             System.out.println("No todo found for this description.");
         }
     }
