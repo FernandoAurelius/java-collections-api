@@ -1,5 +1,3 @@
 package set.basic;
 
-public class Guest {
-
-}
+public record Guest (String name, Integer inviteCode){}
