@@ -34,6 +34,7 @@ public class ContactAgenda {
         for (Contact contact : contacts) {
             if (aux.get().getName().equalsIgnoreCase(contact.getName())) {
                 contact.setPhoneNumber(number);
+                break;
             }
         }
     }
